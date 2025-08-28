@@ -1,0 +1,163 @@
+/* --- Kök Değişkenler ve Genel Stil --- */
+:root {
+    --bg-dark: #121212;
+    --card-dark: #1e1e1e;
+    --text-light: #e0e0e0;
+    --text-muted: #888;
+    --accent-gold: #d4af37; /* Lüks bir altın rengi */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-body);
+}
+
+/* --- Sayfa Başlığı (Hero Alanı) --- */
+.hero-section {
+    padding: 4rem 0;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5); /* Arka planı karartma */
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.8);
+}
+
+/* --- Kategori Kartları (index.php) --- */
+.category-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+.category-card .card-img {
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.category-card:hover .card-img {
+    transform: scale(1.05);
+}
+
+.category-card .card-img-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+}
+
+.category-card .card-title {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+/* --- Ürün Listesi (menu.php) --- */
+.product-item {
+    display: flex;
+    background-color: var(--card-dark);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    transition: background-color 0.3s ease;
+    align-items: center;
+}
+
+.product-item:hover {
+    background-color: #2a2a2a;
+}
+
+.product-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 6px;
+    object-fit: cover;
+    margin-right: 1.5rem;
+}
+
+.product-details {
+    flex-grow: 1;
+}
+
+.product-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.product-description {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0.25rem 0 0;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-gold);
+    font-family: var(--font-body);
+    white-space: nowrap;
+    padding-left: 1rem;
+}
+
+/* --- Geri Butonu --- */
+.back-link {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 2rem;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--accent-gold);
+}
+
+/* --- Footer --- */
+.site-footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid #2a2a2a;
+    color: var(--text-muted);
+}
